@@ -5,6 +5,8 @@
 - Notebook 생성 / 삭제
 - Note 생성 / 수정 / 삭제
 
+<br />
+
 ## 🛠️ 사용한 기술
 
 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -13,6 +15,8 @@
   <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white" />
 </div>
+
+<br />
 
 ## 🗂️ 페이지 구성
 
@@ -60,6 +64,8 @@
 - path: `/notebooks/:notebookId/write/:noteId`
 - 선택한 노트 수정 페이지
 
+<br />
+
 ## 🖼️ Main Layout / 기타 기능
 
 ### 1. Sidebar
@@ -72,6 +78,8 @@
 
 - 뒤로 가기 / 앞으로 가기 버튼
 - 새로운 노트 생성 버튼
+
+<br />
 
 ## 📁 Folder Structure (Project Tree)
 
