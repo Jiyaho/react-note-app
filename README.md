@@ -26,31 +26,36 @@
 </BrowserRouter>
 ```
 
-### 1. Home(Main) Page: `/`
+### 1. Home(Main) Page
 
+- path: `/`
 - Create New Notebook: 새 노트북 생성을 위한 Modal (React-modal Library 사용)
 - 기존에 생성한 노트북있는 경우 Notebook List Page(`/notebooks`)로 Redirect
 
-### 3. Notebooks Page: `/notebooks`
+### 3. Notebooks Page
 
+- path: `/notebooks`
 - LocalStorage에 저장된 Notebook 목록 출력
 - Sub-header: 노트북 개수 출력, 노트북 목록 View Mode 설정, 노트북 검색 Input, 새로운 노트북 추가 버튼
 
-### 4. Notebook Page: `/notebooks/:notebookId`
+### 4. Notebook Page
 
+- path: `/notebooks/:notebookId`
 - 선택한 노트북 페이지
 - 노트북에 생성한 노트가 없는 경우: New Note 생성 안내 컴포넌트 출력
 - 노트북에 생성한 노트가 있는 경우: Write Note Page(`/notebooks/:notebookId/write`)로 Redirect
 
-### 5. Write Note Page: `/notebooks/:notebookId/write`
+### 5. Write Note Page
 
+- path: `/notebooks/:notebookId/write`
 - Sub-sidebar: 노트 목록 출력
   - Sub-sidebar의 Header: 노트북 이름 출력, 노트북 삭제 버튼
 - WriteNote 컴포넌트: 새로운 노트 작성 컴포넌트
   - WriteNote의 Header: 노트 삭제 버튼
 
-### 6. Edit Note Page: `/notebooks/:notebookId/write/:noteId`
+### 6. Edit Note Page
 
+- path: `/notebooks/:notebookId/write/:noteId`
 - 선택한 노트 수정 페이지
 
 ## 🖼️ Main Layout / 기타 기능
@@ -66,4 +71,75 @@
 - 뒤로 가기 / 앞으로 가기 버튼
 - 새로운 노트 생성 버튼
 
-## 📁 Folder Structure
+## 📁 Folder Structure (Project Tree)
+
+```
+📦 react-note-app
+├─ .gitignore
+├─ README.md
+├─ package-lock.json
+├─ package.json
+├─ public
+├─ src
+│  ├─ App.css
+│  ├─ App.test.tsx
+│  ├─ App.tsx
+│  ├─ components
+│  │  ├─ elements
+│  │  │  ├─ EditNote
+│  │  │  │  ├─ EditNoteContent.tsx
+│  │  │  │  └─ EditNoteLayout.tsx
+│  │  │  ├─ Home
+│  │  │  │  └─ EmptyNotebooks.tsx
+│  │  │  ├─ Notebooks
+│  │  │  │  ├─ NotebookCoverButton.tsx
+│  │  │  │  ├─ NotebooksHeader
+│  │  │  │  │  ├─ NotebooksHeader.tsx
+│  │  │  │  │  └─ fragments
+│  │  │  │  │     ├─ NotebookSearchInput.tsx
+│  │  │  │  │     └─ NotebooksToggleViewButton.tsx
+│  │  │  │  └─ SelectNotebook.tsx
+│  │  │  └─ WriteNote
+│  │  │     ├─ NoteListHeader.tsx
+│  │  │     ├─ NoteListSidebar.tsx
+│  │  │     ├─ WriteNoteContent.tsx
+│  │  │     ├─ WriteNoteHeader.tsx
+│  │  │     └─ WriteNoteLayout.tsx
+│  │  ├─ features
+│  │  │  └─ modals
+│  │  │     └─ CreateNotebook
+│  │  │        ├─ CreateNotebookForm.tsx
+│  │  │        ├─ CreateNotebookModal.tsx
+│  │  │        └─ OpenCreateNotebookModal.tsx
+│  │  └─ layouts
+│  │     ├─ Header.tsx
+│  │     ├─ Layout.tsx
+│  │     └─ Sidebar
+│  │        ├─ Sidebar.tsx
+│  │        └─ fragments
+│  │           ├─ ArrowRotate.tsx
+│  │           └─ SidebarNotebookList.tsx
+│  ├─ constants
+│  │  └─ notebookCoverColors.ts
+│  ├─ index.css
+│  ├─ index.tsx
+│  ├─ logo.svg
+│  ├─ pages
+│  │  ├─ EditNote.tsx
+│  │  ├─ Home.tsx
+│  │  ├─ Notebooks.tsx
+│  │  └─ WriteNote.tsx
+│  ├─ react-app-env.d.ts
+│  ├─ recoil
+│  │  └─ atoms.ts
+│  ├─ reportWebVitals.ts
+│  ├─ setupTests.ts
+│  ├─ types
+│  │  └─ index.ts
+│  └─ utils
+│     ├─ getDate.ts
+│     ├─ getNotebooksData.ts
+│     └─ handleDeleteNotebookButton.ts
+├─ tailwind.config.js
+└─ tsconfig.json
+```
