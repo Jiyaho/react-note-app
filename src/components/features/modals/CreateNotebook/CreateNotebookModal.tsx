@@ -1,0 +1,51 @@
+import ReactModal from 'react-modal';
+import CreateNotebookForm from './CreateNotebookForm';
+
+const customModalStyles: ReactModal.Styles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    width: '100%',
+    height: '100vh',
+    zIndex: 10,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+  },
+  content: {
+    width: '500px',
+    height: '500px',
+    zIndex: 150,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    borderRadius: '10px',
+    boxShadow: '2px 2px 2px rgba(0, 0, 0, 0.25)',
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    overflow: 'auto',
+  },
+};
+
+interface ModalProp {
+  isOpen: boolean;
+  onRequestClose: React.MouseEventHandler;
+}
+
+function CreateNotebookModal({ isOpen, onRequestClose }: ModalProp) {
+  return (
+    <>
+      <ReactModal
+        isOpen={isOpen}
+        ariaHideApp={false}
+        onRequestClose={onRequestClose}
+        style={customModalStyles}
+      >
+        <div className="modal-content z-50">
+          <CreateNotebookForm />
+        </div>
+      </ReactModal>
+    </>
+  );
+}
+export default CreateNotebookModal;

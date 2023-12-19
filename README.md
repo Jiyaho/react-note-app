@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# React 메모 애플리케이션
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 'UpNote' 메모 애플리케이션 UI와 비슷하게 구현하기
+- LocalStorage를 이용한 데이터 생성 및 저장 (Notebook 생성/삭제 & Note 생성/수정/삭제)
 
-## Available Scripts
+## 🛠️ 사용한 기술
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
+<img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white" />
 
-### `npm start`
+## 🗂️ 페이지 구성
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```jsx
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/notebooks" element={<Notebooks />} />
+    <Route path="/notebooks/:notebookId" element={<SelectNotebook />} />
+    <Route path="/notebooks/:notebookId/write" element={<WriteNote />} />
+    <Route path="/notebooks/:notebookId/write/:noteId" element={<EditNote />} />
+  </Routes>
+</BrowserRouter>
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Home(Main) Page: `/`
 
-### `npm test`
+- Create New Notebook: 새 노트북 생성을 위한 Modal (React-modal Library 사용)
+- 기존에 생성한 노트북있는 경우 Notebook List Page(`/notebooks`)로 Redirect
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Notebooks Page: `/notebooks`
 
-### `npm run build`
+- LocalStorage에 저장된 Notebook 목록 출력
+- Sub-header: 노트북 개수 출력, 노트북 목록 View Mode 설정, 노트북 검색 Input, 새로운 노트북 추가 버튼
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Notebook Page: `/notebooks/:notebookId`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 선택한 노트북 페이지
+- 노트북에 생성한 노트가 없는 경우: New Note 생성 안내 컴포넌트 출력
+- 노트북에 생성한 노트가 있는 경우: Write Note Page(`/notebooks/:notebookId/write`)로 Redirect
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. Write Note Page: `/notebooks/:notebookId/write`
 
-### `npm run eject`
+- Sub-sidebar: 노트 목록 출력
+  - Sub-sidebar의 Header: 노트북 이름 출력, 노트북 삭제 버튼
+- WriteNote 컴포넌트: 새로운 노트 작성 컴포넌트
+  - WriteNote의 Header: 노트 삭제 버튼
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 6. Edit Note Page: `/notebooks/:notebookId/write/:noteId`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 선택한 노트 수정 페이지
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🖼️ Main Layout / 기타 기능
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 1. Sidebar
 
-## Learn More
+- 새로운 노트북 생성 버튼(`+`)
+- 노트북 목록 열기/닫기(`⋁`,`>`)
+- 노트북 목록에서 노트북 삭제 버튼(`・・・`)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Header
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 뒤로 가기 / 앞으로 가기 버튼
+- 새로운 노트 생성 버튼
+
+## 📁 Folder Structure
