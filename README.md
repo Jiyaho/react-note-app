@@ -1,7 +1,9 @@
 # React 메모 애플리케이션
 
 - 'UpNote' 메모 애플리케이션 UI와 비슷하게 구현하기
-- LocalStorage를 이용한 데이터 생성 및 저장 (Notebook 생성/삭제 & Note 생성/수정/삭제)
+- LocalStorage를 이용한 데이터 저장
+- Notebook 생성 / 삭제
+- Note 생성 / 수정 / 삭제
 
 ## 🛠️ 사용한 기술
 
