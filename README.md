@@ -18,6 +18,32 @@
 
 <br />
 
+## 기능 구현 화면
+
+### 1. Create New Notebook
+
+  <img src="https://i.ibb.co/zs4gpNr/01-create-notebook.gif" alt="01-create-notebook" width="700px" />
+
+### 2. Create New Note
+
+  <img src="https://i.ibb.co/BBH0NkK/02-create-note.gif" alt="02-create-note" width="700px" />
+
+### 3. Edit Notes
+
+  <img src="https://i.ibb.co/0yb6FM7/03-edit-note.gif" alt="03-edit-note" width="700px" />
+
+### 4. Delete Notes
+
+  <img src="https://i.ibb.co/c38rkRV/04-delete-note.gif" alt="04-delete-note" width="700px" />
+
+### 5. Delete Notebooks
+
+  <img src="https://i.ibb.co/jV4K4Z5/05-delete-notebook.gif" alt="05-delete-notebook" width="700px" />
+
+### 6. View Notebook List / Search for Notebooks
+
+  <img src="https://i.ibb.co/yFmW6HY/06-view-notebooks.gif" alt="06-view-notebooks" width="700px" />
+
 ## 🗂️ 페이지 구성
 
 ```jsx
@@ -66,7 +92,7 @@
 
 <br />
 
-## 🖼️ Main Layout / 기타 기능
+## 🖼️ Layout
 
 ### 1. Sidebar
 
