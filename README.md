@@ -1,13 +1,13 @@
-# React 메모 애플리케이션
+# React Note App (React 메모 애플리케이션)
 
-- 'UpNote' 메모 애플리케이션 UI와 비슷하게 구현하기
+- 'UpNote' 메모 애플리케이션 UI와 비슷하게 구현
 - LocalStorage를 이용한 데이터 저장
 - Notebook 생성 / 삭제
 - Note 생성 / 수정 / 삭제
 
 <br />
 
-## 🛠️ 사용한 기술
+## 🛠️ Used skills
 
 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black" />
@@ -18,7 +18,7 @@
 
 <br />
 
-## 기능 구현 화면
+## 🖥️ Introducing Features
 
 ### 1. Create New Notebook
 
@@ -43,6 +43,8 @@
 ### 6. View Notebook List / Search for Notebooks
 
   <img src="https://i.ibb.co/yFmW6HY/06-view-notebooks.gif" alt="06-view-notebooks" width="700px" />
+
+<br />
 
 ## 🗂️ 페이지 구성
 
